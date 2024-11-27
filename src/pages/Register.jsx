@@ -110,13 +110,13 @@ function Register() {
           </form>
           <p className="mt-2 text-xl text-white">
             Already have an accout?
-            <span
-              className="text-yellow-500 cursor-pointer"
+            <button
+              className="text-yellow-500 cursor-pointer pl-1"
               onClick={() => navigate("/login")}
             >
               {" "}
               Login
-            </span>
+            </button>
           </p>
         </div>
       </div>

@@ -125,14 +125,12 @@ function Login() {
             </button>
           </form>
           <p className="mt-2 text-xl text-white">
-            Dont't have an accout?
-            <span
-              className="text-yellow-500 cursor-pointer"
+            Dont't have an accout? 
+            <button
+              className="text-yellow-500 cursor-pointer pl-1"
               onClick={() => navigate("/register")}
-            >
-              {" "}
-              Sign Up
-            </span>
+            > Sign Up
+            </button>
           </p>
         </div>
       </div>
