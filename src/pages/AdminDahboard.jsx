@@ -7,7 +7,7 @@ import useCurrentUser from "../context/UserContext";
 import { toast } from "react-toastify";
 
 function AdminDashboard() {
-  const { users, setUsers, postNewUserInfo } = useCurrentUser();
+  const { users, setUsers,currentUser, postNewUserInfo } = useCurrentUser();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -57,21 +57,29 @@ function AdminDashboard() {
   const handleUpdate = async (userId) => {
     const user = users.find((u) => u.id === userId);
     try {
-      const response = await axios.put(`/users/${userId}`, {
-        role: user.role,
-        status: user.status,
-        permissions: user.permissions,
-      });
-
-      if (response.status === 200) {
-        toast.success("User Updated Successfully!!", {
-          position: "top-center",
-          autoClose: 1200,
-          theme: "dark",
-          hideProgressBar: true
+      if(currentUser.id!==userId){
+        const response = await axios.put(`/users/${userId}`, {
+          role: user.role,
+          status: user.status,
+          permissions: user.permissions,
         });
-      } else {
-        toast.error('Error Updating User', {
+        if (response.status === 200) {
+          toast.success("User Updated Successfully!!", {
+            position: "top-center",
+            autoClose: 1200,
+            theme: "dark",
+            hideProgressBar: true
+          });
+        } else {
+          toast.error('Error Updating User', {
+            position: "top-center",
+            autoClose: 1200,
+            theme: "dark",
+            hideProgressBar: true
+          });
+        }
+      }else{
+        toast.error('You can not change your data', {
           position: "top-center",
           autoClose: 1200,
           theme: "dark",
