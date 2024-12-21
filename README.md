@@ -1,6 +1,6 @@
 # RBAC UI Project  
 
-A Role-Based Access Control (RBAC) UI project built with React, Vite, Mock api and Tailwind CSS. This is a students Results application where students can view their result and other information.
+A Role-Based Access Control (RBAC) UI project built with React, Vite, Mock api and Tailwind CSS. This is a students Results application where students can view their result and other information. There are also different roles which gives you the permission to read, write, create and delete. admin can change role create user and give them permissions.
 
 ## Table of Contents
 
