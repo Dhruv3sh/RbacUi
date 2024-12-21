@@ -29,7 +29,7 @@ function Navbar() {
   }, [location.pathname]);
 
   return (
-    <nav className="bg-green-700 text-white shadow-lg ">
+    <nav className="bg-[#20b2aa] text-white shadow-lg ">
       <div className="container flex items-center justify-between p-2 relative ">
         
         <div className="flex items-center gap-2">
@@ -42,7 +42,7 @@ function Navbar() {
         </div>
 
         
-        <div className="hidden lg:flex gap-8 items-center">
+        <div className="hidden lg:flex gap-8 items-center font-bold">
           <Link
             to="/"
             className="hover:text-green-300 transition-transform duration-300 hover:scale-105"
@@ -88,7 +88,7 @@ function Navbar() {
       </div>
 
       {/* Dropdown Menu for Mobile */}
-      <div className={`lg:hidden bg-green-800 p-4 overflow-hidden transition-all duration-300 ease-in-out absolute right-0 z-10 ${
+      <div className={`lg:hidden bg-[#20b2aa] font-semibold p-4 overflow-hidden transition-all duration-300 ease-in-out absolute right-0 z-10 ${
           navbar ? 'max-h-screen' : 'max-h-0 opacity-0 '
         }`}>
         <Link
