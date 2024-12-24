@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import AdminDahboard from "../pages/AdminDahboard";
 import PrivateRoute from "../components/PrivateRoute";
+import NotFound from "../pages/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -17,21 +18,25 @@ export const router = createBrowserRouter([
                 element:<PrivateRoute><Home/></PrivateRoute>
             },
             {
-                path:'admin-dashboard',
+                path:'/admin-dashboard',
                 element:<AdminDahboard/>
             },
             {
-                path:'login',
+                path:'/login',
                 element:<Login/>
             },
             {
-                path:'register',
+                path:'/register',
                 element:<Register/>
             },
             {
-                path:'profile',
-                element:<Profile/>
+                path:'/profile',
+                element:<PrivateRoute><Profile/></PrivateRoute>
             },
+            {
+                path: '*',
+                element: <NotFound />
+            }
         ]
     }
 ]);
